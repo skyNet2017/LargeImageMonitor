@@ -21,7 +21,7 @@ dependencies {
     implementation localGroovy()
     implementation 'com.android.tools.build:gradle:3.0.1'//版本不能太高，防止跟项目的起冲突
     implementation 'com.android.tools.build:gradle-api:3.0.0'
-    implementation('com.quinn.hunter:hunter-transform:0.9.2') { //使用hunter框架
+    implementation('com.quinn.hunter:hunter-transform:0.9.3') { //使用hunter框架
         exclude group: 'com.android.tools.build' //排除hunter带来的gradle，使用自定义gradle版本
     }
     //这里不引入asm的相关包是因为hunter中已经引入，如果想使用新版本则可以引入，但是要排除掉hunter使用的版本
@@ -31,4 +31,18 @@ repositories {
     google()
     jcenter()
     mavenCentral()
+}
+
+apply plugin: 'maven'
+
+group = 'org.zzy.largeimage'
+version = '1.0.1.1'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //repository(url: "file://[your local maven path here]")
+            repository(url: mavenLocal().getUrl())
+        }
+    }
 }
