@@ -1,5 +1,6 @@
 package org.zzy.lib.largeimage.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -37,6 +38,10 @@ public class LargeImageListActivity extends AppCompatActivity {
     private LargeImageListAdapter mLargeImageAdapter;
     private List<LargeImageInfo> mLargeImageList;
     private SwipeRefreshLayout mRefresh;
+
+    public static void start(Activity activity){
+        activity.startActivity(new Intent(activity,LargeImageListActivity.class));
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

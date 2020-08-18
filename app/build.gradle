@@ -30,5 +30,6 @@ dependencies {
     implementation rootProject.ext.dependencies["picasso"]
     implementation rootProject.ext.dependencies["fresco"]
     implementation rootProject.ext.dependencies["image-loader"]
-    implementation rootProject.ext.dependencies["image-monitor"]
+    //implementation rootProject.ext.dependencies["image-monitor"]
+    implementation project(':largeimage')
 }

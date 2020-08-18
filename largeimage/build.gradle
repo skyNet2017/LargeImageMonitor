@@ -42,3 +42,17 @@ dependencies {
     }
 
 }
+
+apply plugin: 'maven'
+
+group = 'org.zzy.largeimage'
+version = '1.0.1.2'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //repository(url: "file://[your local maven path here]")
+            repository(url: mavenLocal().getUrl())
+        }
+    }
+}
